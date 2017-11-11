@@ -3,11 +3,12 @@ jobs:
   build:
     working_directory: ~/record
     docker:
-      - image: drujensen/crystal:0.23.1
+      - image: crystallang/crystal:0.23.1
+      - image: circleci/postgres:9.5-alpine
         environment:
-          DB: lucky_record_test
+          POSTGRES_USER: lucky-record
           POSTGRES_DB: lucky_record_test
-
+          POSTGRES_PASSWORD: ""
     steps:
       - checkout
       - run: crystal deps
