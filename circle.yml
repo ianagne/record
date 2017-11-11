@@ -4,6 +4,10 @@ jobs:
     working_directory: ~/record
     docker:
       - image: drujensen/crystal:0.23.1
+        environment:
+          DB: lucky_record_test
+          POSTGRES_DB: lucky_record_test
+
     steps:
       - checkout
       - run: crystal deps
