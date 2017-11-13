@@ -5,7 +5,8 @@ require "./support/*"
 LuckyRecord::Repo.configure do
   settings.url = LuckyRecord::PostgresURL.build(
     database: "lucky_record_test",
-    hostname: "localhost"
+    hostname: "localhost",
+    username: "lucky-record"
   )
 end
 
